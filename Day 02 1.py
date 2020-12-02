@@ -23,7 +23,7 @@ def extractPassword(line):
     return password
 
 
-def evaluatePolicy(line) -> bool:
+def evaluatePolicy(line):
     min, max = extractPolicyMinMax(line)
     char = extractMandatoryChar(line)
     password = extractPassword(line)

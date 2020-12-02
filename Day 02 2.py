@@ -22,7 +22,7 @@ def extractPassword(line):
     return password
 
 
-def evaluatePolicy(line) -> bool:
+def evaluatePolicy(line):
     first, second = extractPolicyPositions(line)
     print(first, second)
     char = extractMandatoryChar(line)
