@@ -24,10 +24,8 @@ def extractPassword(line):
 
 def evaluatePolicy(line):
     first, second = extractPolicyPositions(line)
-    print(first, second)
     char = extractMandatoryChar(line)
     password = extractPassword(line)
-    countOfChars = password.count(char)
     return (password[first] == char) ^ (password[second] == char)
 
 
