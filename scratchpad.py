@@ -8,8 +8,8 @@ for line in file:
 
 # Create an array of requirements and passwords
 for i in range(len(passwords)):
-    new_value = passwords[i].replace('-',' ')
-    new_value = new_value.replace(':','')
+    new_value = passwords[i].replace('-', ' ')
+    new_value = new_value.replace(':', '')
     new_value = new_value.split(' ')
     new_value[0] = int(new_value[0])
     new_value[1] = int(new_value[1])
@@ -27,4 +27,20 @@ for i in passlist:
         correct_passes += 1
 
 # Print a thing
-print('A total of',correct_passes,'was correct, out of a possible',len(passlist))
+print('A total of', correct_passes,
+      'was correct, out of a possible', len(passlist))
+
+# Day 2: Password Philosophy --- Part 2 ---
+
+# Some values for stuff
+passlist = passwords
+correct_passes = 0
+
+# Counting all valid passwords
+for i in passlist:
+    if (i[3][i[0] - 1] == i[2]) ^ (i[3][i[1] - 1] == i[2]):
+        correct_passes += 1
+
+# Print a thing
+print('A total of', correct_passes,
+      'was correct, out of a possible', len(passlist))
