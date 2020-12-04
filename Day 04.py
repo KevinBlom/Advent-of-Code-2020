@@ -19,27 +19,26 @@ listOfPassports = []
 
 
 def evaluatePassport(passport):
-    if all(manProps in passport for manProps in mandatoryProperties):
-        print(passport)
-        return 1
-    else:
-        return 0
+  if all(manProps in passport for manProps in mandatoryProperties):
+    return 1
+  else:
+    return 0
 
 
 for line in lines:
-    if line != "\n":
-        properties = line.split()
-        for element in properties:
-            tempPassport.append(element)
-    else:
-        unprocessedPassports.append(tempPassport)
-        tempPassport = []
+  if line != "\n":
+    properties = line.split()
+    for element in properties:
+      tempPassport.append(element)
+  else:
+    unprocessedPassports.append(tempPassport)
+    tempPassport = []
 
 
 for passport in unprocessedPassports:
-    listOfPassports.append(dict(e.split(':') for e in passport))
+  listOfPassports.append(dict(e.split(':') for e in passport))
 
 for passport in listOfPassports:
-    countOfValidPassports += evaluatePassport(passport)
+  countOfValidPassports += evaluatePassport(passport)
 
 print(countOfValidPassports)
