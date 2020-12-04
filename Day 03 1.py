@@ -1,5 +1,6 @@
 from tools import *
 import math
+
 lines = readFileToStrings("Input03")
 
 space = "."
