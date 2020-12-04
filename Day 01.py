@@ -3,6 +3,8 @@ testImport()
 
 lines = readFileToInts("Input01")
 
+print(lines)
+
 for j in range(200):
     for i in range(200):
         for x in range(200):
