@@ -10,7 +10,7 @@ def readFileToInts(name) -> list:
 
 
 def readFileToStrings(name):
-    file = open("Inputs/" + name + ".txt")
+    file = open("Inputs/" + name)# + ".txt")
     lines = list(map(str, file.readlines()))
     print("Loaded " + str(len(lines)) + " lines of data.")
     return lines
