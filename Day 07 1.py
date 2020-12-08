@@ -1,7 +1,7 @@
 from tools import *
 testImport()
 
-bagsInput = readFileToStrings("Input07Test")
+bagsInput = readFileToStrings("Input07")
 bags = {}
 
 
@@ -21,14 +21,13 @@ def findContentsOfBag(bag):
 
 def canContainShinyGoldBag(bag):
     for subBag in bags[bag]:
-        print('Searching in: ' + subBag)
         if subBag == 'other':
             return False
         elif subBag == 'shiny gold':
-            print('Found shiny!')
             return True
         else:
-            return canContainShinyGoldBag(subBag)
+            if canContainShinyGoldBag(subBag):
+                return True
 
 
 for bag in bagsInput:
@@ -37,12 +36,11 @@ for bag in bagsInput:
     bagColor = findBagColor(bag)
     bags[bagColor] = findContentsOfBag(bag)
 
-print(bags)
+
 shinyGoldCounter = 0
 for bag in bags.keys():
     print('Starting search from dict:' + bag)
     if canContainShinyGoldBag(bag):
         shinyGoldCounter += 1
-
 
 print(shinyGoldCounter)
