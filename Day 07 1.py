@@ -1,14 +1,12 @@
 from tools import *
 testImport()
 
-bagsInput = readFileToStrings("Input07")
-
+bagsInput = readFileToStrings("Input07Test")
 bags = {}
 
 
 def findBagColor(bag):
     return bag[:bag.index('bags')].strip()
-    pass
 
 
 def findContentsOfBag(bag):
@@ -39,8 +37,10 @@ for bag in bagsInput:
     bagColor = findBagColor(bag)
     bags[bagColor] = findContentsOfBag(bag)
 
+print(bags)
 shinyGoldCounter = 0
 for bag in bags.keys():
+    print('Starting search from dict:' + bag)
     if canContainShinyGoldBag(bag):
         shinyGoldCounter += 1
 
