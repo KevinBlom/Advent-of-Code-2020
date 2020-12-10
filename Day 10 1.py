@@ -5,7 +5,6 @@ adapters = readFileToStrings("Input10")
 
 adapters = list(map(lambda x: int(x.strip()), adapters))
 adapters.sort()
-
 print(adapters)
 
 oneJoltCount = 0
@@ -21,4 +20,4 @@ for i in range(0, len(adapters) - 1):
     else:
         print("Error")
 
-print(oneJoltCount * threeJoltCount)
+print((oneJoltCount + 1) * (threeJoltCount + 1))
